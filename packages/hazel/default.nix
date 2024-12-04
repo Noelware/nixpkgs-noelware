@@ -38,11 +38,11 @@ in
     };
 
     meta = with lib; {
-      description = "Easy, self-hostable, and flexible image host made in Rust";
-      homepage = "https://floofy.dev/oss/ume";
+      description = "Easy to use read-only proxy to map objects to URLs ";
+      homepage = "https://noelware.org/oss/hazel";
       license = with licenses; [asl20];
-      maintainers = with maintainers; [auguwu];
-      mainProgram = "ume";
-      changelog = "https://github.com/auguwu/ume/releases/v${version}";
+      maintainers = with maintainers; [auguwu noelware];
+      mainProgram = "hazel";
+      changelog = "https://github.com/Noelware/hazel/releases/v${version}";
     };
   }
