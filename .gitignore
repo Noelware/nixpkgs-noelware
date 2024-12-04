@@ -1,0 +1,10 @@
+nixosModules/hibiki.nix
+nixosModules/provisionerd.nix
+
+packages/cattle
+packages/hibiki
+packages/noeldoc
+packages/provisionerd
+packages/ryu
+packages/foxbuild.nix
+packages/helm-xtest.nix
