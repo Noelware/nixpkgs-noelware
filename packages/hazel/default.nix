@@ -10,7 +10,7 @@
   darwin,
 }: let
   outputHashes = {
-    "azalia-0.1.0" = "";
+    "azalia-0.1.0" = (import ../../azalia.nix).hazel;
   };
 in
   rustPlatform.buildRustPackage rec {
@@ -41,7 +41,7 @@ in
       description = "Easy to use read-only proxy to map objects to URLs ";
       homepage = "https://noelware.org/oss/hazel";
       license = with licenses; [asl20];
-      maintainers = with maintainers; [auguwu noelware];
+      maintainers = with maintainers; [auguwu];
       mainProgram = "hazel";
       changelog = "https://github.com/Noelware/hazel/releases/v${version}";
     };

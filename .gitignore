@@ -2,9 +2,13 @@ nixosModules/hibiki.nix
 nixosModules/provisionerd.nix
 
 packages/cattle
+packages/kokori
 packages/hibiki
+packages/noelctl
 packages/noeldoc
 packages/provisionerd
 packages/ryu
+packages/sayu
+
 packages/foxbuild.nix
 packages/helm-xtest.nix
