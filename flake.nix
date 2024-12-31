@@ -2,25 +2,13 @@
   description = "Nixpkgs overlay for Noelware products and services";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    systems.url = "github:nix-systems/default";
-    charted = {
-      # TODO(@auguwu): map to `github:charted-dev/charted/0.1.0` once released
-      # TODO(@auguwu): remove this and build our own with nixpkgs primitives once all nightly features land in Rust stable
-      url = "github:charted-dev/charted";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
-      };
-    };
   };
 
-  outputs = {
-    nixpkgs,
-    systems,
-    charted,
-    ...
-  }: let
-    eachSystem = nixpkgs.lib.genAttrs (import systems);
+  outputs = {nixpkgs, ...}: let
+    # x86_64-linux and {aarch64,x86_64}-darwin is based off our CI when we push
+    # the packages to our Nix binary cache. In the future, we do aim to support
+    # aarch64-linux soon!
+    eachSystem = nixpkgs.lib.genAttrs ["x86_64-linux" "x86_64-darwin" "aarch64-darwin"];
     nixpkgsFor = system:
       import nixpkgs {
         inherit system;
@@ -31,8 +19,8 @@
       pkgs = nixpkgsFor system;
     in {
       # cattle = pkgs.callPackage ./packages/cattle {};
-      charted = charted.packages.${system}.charted;
-      charted-helm-plugin = charted.packages.${system}.helm-plugin;
+      charted = pkgs.callPackage ./packages/charted/server {};
+      charted-helm-plugin = pkgs.callPackage ./packages/charted/helm-plugin {};
       # foxbuild = pkgs.callPackage ./packages/foxbuild {};
       hazel = pkgs.callPackage ./packages/hazel {};
       # helm-xtest = pkgs.callPackage ./packages/helm-xtest.nix {};

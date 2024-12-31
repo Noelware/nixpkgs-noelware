@@ -18,14 +18,14 @@ This repository is a Nixpkgs overlay that contains all the packages and services
 {
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-        noelware-overlay = {
+        noelware = {
             url = "github:Noelware/nixpkgs-noelware";
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
 
-    outputs = { nixpkgs, noelware-overlay, ... }: let
-        overlays = [(import noelware-overlay)];
+    outputs = { nixpkgs, noelware, ... }: let
+        overlays = [(import noelware)];
         system = "x86_64-linux";
 
         pkgs = import nixpkgs {

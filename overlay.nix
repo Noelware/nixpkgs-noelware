@@ -1,5 +1,7 @@
 self: super: {
   # cattle = super.callPackage ./packages/cattle {};
+  charted = super.callPackage ./packages/charted/server {};
+  charted-helm-plugin = super.callPackage ./packages/charted/helm-plugin {};
   # foxbuild = super.callPackage ./packages/foxbuild.nix {};
   hazel = super.callPackage ./packages/hazel {};
   # helm-xtest = super.callPackage ./packages/helm-xtest.nix {};

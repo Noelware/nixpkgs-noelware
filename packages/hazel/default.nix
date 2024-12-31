@@ -20,8 +20,10 @@ in
     src = fetchFromGitHub {
       owner = "Noelware";
       repo = "hazel";
-      rev = version;
-      hash = "";
+
+      # TODO(@auguwu): use the version instead of a hash
+      rev = "49c286061c4a676bbf64e4b0bd10741175db9e9f";
+      hash = "sha256-MG4F5NcFppkFpDe/PEiksVirK0V6nuVeVO33Ae+UKEg=";
     };
 
     nativeBuildInputs = [pkg-config];
@@ -38,7 +40,7 @@ in
     };
 
     meta = with lib; {
-      description = "Easy to use read-only proxy to map objects to URLs ";
+      description = "Easy to use read-only proxy to map storage objects as URLs";
       homepage = "https://noelware.org/oss/hazel";
       license = with licenses; [asl20];
       maintainers = with maintainers; [auguwu];
