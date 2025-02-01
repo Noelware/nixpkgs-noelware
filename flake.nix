@@ -20,24 +20,7 @@
       };
   in {
     overlays.default = import ./overlay.nix;
-    packages = eachSystem (system: let
-      pkgs = nixpkgsFor system;
-    in {
-      # cattle = pkgs.callPackage ./packages/cattle {};
-      charted = pkgs.callPackage ./packages/charted/server {};
-      charted-helm-plugin = pkgs.callPackage ./packages/charted/helm-plugin {};
-      # hoshi = pkgs.callPackage ./packages/charted/hoshi {};
-      hazel = pkgs.callPackage ./packages/hazel {};
-      # helm-xtest = pkgs.callPackage ./packages/helm-xtest.nix {};
-      # noeldoc = pkgs.callPackage ./packages/noeldoc {};
-      # noelctl = pkgs.callPackage ./packages/noelctl {};
-      # provisionerd = pkgs.callPackage ./packages/provisionerd {};
-      # provctl = pkgs.callPackage ./packages/provisionerd/provctl {};
-      # sayu = pkgs.callPackage ./packages/sayu {};
-      teamcity-agent = pkgs.callPackage ./packages/jetbrains/teamcity/agent {};
-      teamcity-server = pkgs.callPackage ./packages/jetbrains/teamcity/server {};
-    });
-
+    packages = eachSystem (system: (import ./overlay.nix {} (nixpkgsFor system)));
     nixosModules = {
       hazel = import ./nixosModules/hazel.nix;
       teamcity-agent = import ./nixosModules/teamcity/agent.nix;
