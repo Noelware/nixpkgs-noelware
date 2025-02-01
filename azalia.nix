@@ -4,9 +4,6 @@
   cattle = "";
   charted = "sha256-N0nNYm7KKHigt6NDXIujqdA/E35IbfBYJfwTBV+BRco=";
   hazel = "sha256-olBWgKXTtTzXnjmsKJrc+gnAbdvWBqUX61ydxts5m6s=";
-  hibiki = "";
-  kokori = "";
   noelctl = "";
   noeldoc = "";
-  ryu = "";
 }

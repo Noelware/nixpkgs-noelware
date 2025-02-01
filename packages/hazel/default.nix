@@ -23,7 +23,7 @@ in
 
       # TODO(@auguwu): use the version instead of a hash
       rev = "ec028b6878970c612d1a9352f1e3aea3acdceb61";
-      hash = "sha256-MG4F5NcFppkFpDe/PEiksVirK0V6nuVeVO33Ae+UKEg=";
+      hash = "sha256-MIm3gnM9Ku7mSl+QsgVcyfLDE3muLmj+RP+pG+AneFk=";
     };
 
     nativeBuildInputs = [pkg-config];
