@@ -1,0 +1,1 @@
+This folder contains the OpenTofu pipeline for running our Nix binary cache (https://nix.noelware.org).

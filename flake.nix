@@ -12,6 +12,11 @@
     nixpkgsFor = system:
       import nixpkgs {
         inherit system;
+
+        # We redistribute "unfree" software (JetBrains TeamCity); "unfree" is used
+        # loosely as we can download them and use them for free but with limited
+        # features.
+        config.allowUnfree = true;
       };
   in {
     overlays.default = import ./overlay.nix;
@@ -21,16 +26,22 @@
       # cattle = pkgs.callPackage ./packages/cattle {};
       charted = pkgs.callPackage ./packages/charted/server {};
       charted-helm-plugin = pkgs.callPackage ./packages/charted/helm-plugin {};
-      # foxbuild = pkgs.callPackage ./packages/foxbuild {};
+      # hoshi = pkgs.callPackage ./packages/charted/hoshi {};
       hazel = pkgs.callPackage ./packages/hazel {};
       # helm-xtest = pkgs.callPackage ./packages/helm-xtest.nix {};
-      # hibiki = pkgs.callPackage ./packages/hibiki {};
-      # kokori = pkgs.callPackage ./packages/kokori {};
-      # noelctl = pkgs.callPackage ./packages/noelctl {};
       # noeldoc = pkgs.callPackage ./packages/noeldoc {};
+      # noelctl = pkgs.callPackage ./packages/noelctl {};
       # provisionerd = pkgs.callPackage ./packages/provisionerd {};
-      # ryu = pkgs.callPackage ./packages/ryu {};
+      # provctl = pkgs.callPackage ./packages/provisionerd/provctl {};
+      # sayu = pkgs.callPackage ./packages/sayu {};
+      teamcity-agent = pkgs.callPackage ./packages/jetbrains/teamcity/agent {};
+      teamcity-server = pkgs.callPackage ./packages/jetbrains/teamcity/server {};
     });
+
+    nixosModules = {
+      hazel = import ./nixosModules/hazel.nix;
+      teamcity-agent = import ./nixosModules/teamcity/agent.nix;
+    };
 
     formatter = eachSystem (system: (nixpkgsFor system).alejandra);
   };
