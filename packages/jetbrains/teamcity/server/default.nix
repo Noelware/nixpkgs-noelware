@@ -18,7 +18,7 @@ in
 
     installPhase = "cp -R . $out";
     meta = with lib; {
-      description = "Build Agent for JetBrains TeamCity";
+      description = "Powerful CI/CD solution for modern DevOps teams";
       homepage = "https://jetbrains.com/teamcity";
       sourceProvenance = with sourceTypes; [binaryBytecode];
       maintainers = with maintainers; [auguwu];

@@ -22,7 +22,7 @@ in
       repo = "hazel";
 
       # TODO(@auguwu): use the version instead of a hash
-      rev = "49c286061c4a676bbf64e4b0bd10741175db9e9f";
+      rev = "ec028b6878970c612d1a9352f1e3aea3acdceb61";
       hash = "sha256-MG4F5NcFppkFpDe/PEiksVirK0V6nuVeVO33Ae+UKEg=";
     };
 
