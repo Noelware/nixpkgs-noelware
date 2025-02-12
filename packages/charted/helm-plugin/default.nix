@@ -25,7 +25,7 @@
   };
 in
   rustPlatform.buildRustPackage rec {
-    pname = "charted";
+    pname = "charted-helm-plugin";
     version = "0.1.0";
 
     src = fetchFromGitHub {
