@@ -75,6 +75,13 @@ in
         --bash <($out/bin/charted-helm-plugin completions bash) \
         --fish <($out/bin/charted-helm-plugin completions fish) \
         --zsh  <($out/bin/charted-helm-plugin completions zsh)
+
+      install -Dm644 plugin.yaml $out/charted-helm-plugin/plugin.yaml
+      mv $out/bin $out/charted-helm-plugin
+    '';
+
+    postPatch = ''
+      sed -i '/^hooks:/,+2 d' plugin.yaml
     '';
 
     meta = with lib; {
