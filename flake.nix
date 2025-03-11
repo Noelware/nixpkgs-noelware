@@ -31,7 +31,12 @@
       };
   in {
     overlays.default = import ./overlay.nix;
-    packages = eachSystem (system: (import ./overlay.nix {} (nixpkgsFor system)));
+    packages = eachSystem (system: let
+      pkgs = nixpkgsFor system;
+      all = import ./overlay.nix {} pkgs;
+    in
+      all);
+
     # nixosModules = {
     #   hazel = import ./nixosModules/hazel.nix;
     #   teamcity-agent = import ./nixosModules/teamcity/agent.nix;
