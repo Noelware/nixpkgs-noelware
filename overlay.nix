@@ -1,15 +1,15 @@
-self: super: {
-  # cattle = super.callPackage ./packages/cattle {};
-  charted = super.callPackage ./packages/charted/server {};
-  charted-helm-plugin = super.callPackage ./packages/charted/helm-plugin {};
-  # hoshi = super.callPackage ./packages/charted/hoshi {};
-  hazel = super.callPackage ./packages/hazel {};
-  # helm-xtest = super.callPackage ./packages/helm-xtest.nix {};
-  # noeldoc = super.callPackage ./packages/noeldoc {};
-  # noelctl = super.callPackage ./packages/noelctl {};
-  # provisionerd = super.callPackage ./packages/provisionerd {};
-  # provctl = super.callPackage ./packages/provisionerd/provctl {};
-  # sayu = super.callPackage ./packages/sayu {};
-  teamcity-agent = super.callPackage ./packages/jetbrains/teamcity/agent {};
-  teamcity-server = super.callPackage ./packages/jetbrains/teamcity/server {};
+final: prev: {
+  # cattle = prev.callPackage ./packages/cattle {};
+  charted = prev.callPackage ./packages/charted/server {};
+  charted-helm-plugin = prev.callPackage ./packages/charted/helm-plugin {};
+  # hoshi = prev.callPackage ./packages/charted/hoshi {};
+  hazel = prev.callPackage ./packages/hazel {};
+  # helm-xtest = prev.callPackage ./packages/helm-xtest.nix {};
+  # noeldoc = prev.callPackage ./packages/noeldoc {};
+  # noelctl = prev.callPackage ./packages/noelctl {};
+  teamcity-agent = prev.callPackage ./packages/jetbrains/teamcity/agent {};
+  teamcity-server = prev.callPackage ./packages/jetbrains/teamcity/server {};
+
+  ### MISC PACKAGES THAT ARENT TIED TO NOELWARE
+  cargo-updates = prev.callPackage ./packages/misc/cargo-upgrades.nix {};
 }
