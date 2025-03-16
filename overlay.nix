@@ -11,5 +11,5 @@ final: prev: {
   teamcity-server = prev.callPackage ./packages/jetbrains/teamcity/server {};
 
   ### MISC PACKAGES THAT ARENT TIED TO NOELWARE
-  cargo-updates = prev.callPackage ./packages/misc/cargo-upgrades.nix {};
+  cargo-upgrades = prev.callPackage ./packages/misc/cargo-upgrades.nix {};
 }
