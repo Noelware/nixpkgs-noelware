@@ -7,8 +7,6 @@ final: prev: {
   # helm-xtest = prev.callPackage ./packages/helm-xtest.nix {};
   # noeldoc = prev.callPackage ./packages/noeldoc {};
   # noelctl = prev.callPackage ./packages/noelctl {};
-  teamcity-agent = prev.callPackage ./packages/jetbrains/teamcity/agent {};
-  teamcity-server = prev.callPackage ./packages/jetbrains/teamcity/server {};
 
   ### MISC PACKAGES THAT ARENT TIED TO NOELWARE
   cargo-upgrades = prev.callPackage ./packages/misc/cargo-upgrades.nix {};

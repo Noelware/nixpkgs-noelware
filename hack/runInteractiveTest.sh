@@ -9,9 +9,8 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-if [ -d "result" ]; then
-    rm "result"
-fi
+# delete result/ symlink
+[ -d "result" ] && rm "result"
 
 # TODO(@auguwu): there is probably a better way of evaluating the
 # current system, but this is the only way I can do so.
