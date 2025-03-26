@@ -12,13 +12,13 @@
 in {
   version = "0.1.0";
   charted = {
-    cargoHash = "sha256-HF8QPtaL34XfjWki2aVl2pWZ+8JYDqLucqMqEhQTaA0=";
+    cargoHash = "sha256-KnftxeJbp4hxhDe+yYZAWJH37l/LkJfZoNxKAYEB7I4=";
     src = createSrc {
       repo = "charted";
 
       # TODO(@auguwu): use `version` instead of a commit
-      rev = "7990a60fb298fd9a3510e8bffc19a5132160d3f1";
-      hash = "sha256-OeANiw0CqTQGhpM3M3yuGpYLD3Dy5QaapCpobRZjZoc=";
+      rev = "7c6ea57387ba140641e2c271ffb6f8ae13a58064";
+      hash = "sha256-mYaPdlDAZx1Mdeb+CXK8bHD3e4/I8piqSt9/x7jsHZk=";
     };
   };
 

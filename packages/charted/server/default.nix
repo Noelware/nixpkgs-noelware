@@ -17,10 +17,10 @@
 }: let
   sources = import ../sources.nix {inherit fetchFromGitHub;};
 
-  inherit (sources) project;
+  inherit (sources) charted;
 in
   rustPlatform.buildRustPackage rec {
-    inherit (project) src cargoHash;
+    inherit (charted) src cargoHash;
     inherit (sources) version;
 
     pname = "charted";
